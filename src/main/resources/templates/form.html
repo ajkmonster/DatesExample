@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <title>Course Form</title>
+</head>
+<body>
+<form class="form-horizontal" action="#" th:action="@{/process}" th:object="${task}" method="post">
+    <div class="form-group">
+        <input type="hidden" th:field="*{id}" />
+        <label class="control-label col-sm-2" for="title">Title :</label>
+        <div class="col-xs-2">
+            <input type="text" class="form-control" id="title" placeholder="Enter Title" th:field="*{title}" />
+            <span th:if="${#fields.hasErrors('title')}"
+                  th:errors="*{title}"></span><br />
+        </div>
+    </div>
+<!--    <div class="form-group">-->
+<!--        <label class="control-label col-sm-2" for="instructor">Date :</label>-->
+<!--        <div class="col-xs-3">-->
+<!--            <input type="date" class="form-control" id="instructor" th:field="*{postedDate}"/>-->
+<!--            <span th:if="${#fields.hasErrors('postedDate')}"-->
+<!--                  th:errors="*{postedDate}"></span><br />-->
+<!--        </div>-->
+<!--    </div>-->
+    <div class="form-group">
+        <label class="control-label col-sm-2" for="description">Description :</label>
+        <div class="col-sm-4">
+            <textarea rows="3" class="form-control" id="description" placeholder="Enter description" th:field="*{description}" />
+            <span th:if="${#fields.hasErrors('description')}"
+                  th:errors="*{description}"></span><br />
+        </div>
+    </div>
+    <br />
+    <div class="form-group">
+        <div class="col-sm-offset-2 col-sm-10">
+            <button type="submit" class="btn btn-default">Submit</button>
+        </div>
+    </div>
+
+</form>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+
+</body>
+</html>

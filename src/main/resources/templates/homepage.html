@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<a href="/process">Add a task</a>
+<div th:each="task : ${tasks}">
+    Title: <span th:text="${task.title}"></span> </br>
+    Posted Date: <span th:text="${task.formattedPostedDate}"></span> </br>
+    Description: <span th:text="${task.description}"></span> </br>
+</div>
+</body>
+</html>
